@@ -46,6 +46,7 @@ import momentAgo from("moment-ago");
 
 ## API
 
+- momentAgo().ago()
 ```
 momentAgo('2018-08-08') // 解析
 
