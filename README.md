@@ -26,22 +26,32 @@
 // --------------------------------------
 ```
 
-## 用法
+## Install
 
-1. `yarn add moment-ago` 或者 `npm install moment-ago`
+`yarn add moment-ago`  
+或者  
+`npm install moment-ago`
 
-2. 使用
+
+## 使用
 
 nodejs
-
 ```
 const momentAgo = require("moment-ago");
-```
 
+const agoStr = momentAgo(new Date()).ago();
+
+console.log(agoStr);  //刚刚
+```
 ES6
 
 ```
 import momentAgo from("moment-ago");
+
+
+const agoStr = momentAgo(new Date().valueOf() - 5000).ago({ adjustVal: 0 });
+
+console.log(agoStr);  //5秒前
 ```
 
 ## API

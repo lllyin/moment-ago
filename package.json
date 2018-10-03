@@ -1,6 +1,6 @@
 {
   "name": "moment-ago",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "人性化显示时间相对现在过去多久",
   "author": "andesome <ling95613@gmail.com> (https://preview.liaolunling.top/)",
   "main": "index.js",
@@ -25,5 +25,16 @@
   },
   "devDependencies": {
     "jest": "^23.6.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andesome/moment-ago.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Andesome/moment-ago/issues"
+  },
+  "homepage": "https://github.com/Andesome/moment-ago#readme"
 }
