@@ -1,4 +1,4 @@
-const dayjs = require("dayjs");
+const dayjs = require('dayjs');
 
 // -------------规则描述------------------
 /**
@@ -25,7 +25,7 @@ const DATE_CONFIG = {
   m: 60,
   h: 3600,
   d: 86400,
-  daysOfYeay: 365
+  daysOfYeay: 365,
 };
 
 // 毫秒转秒
@@ -48,7 +48,7 @@ function seconds2Date(seconds) {
   const dateObj = {
     h: 0,
     m: 0,
-    s: 0
+    s: 0,
   };
   if (seconds < DATE_CONFIG.m) {
     dateObj.s = seconds;
@@ -88,12 +88,12 @@ function getHumanDate(date, options = {}) {
   const relativeS = relativeSeconds(startTemp, currDate);
 
   if (Math.abs(relativeS) <= adjustVal) {
-    return "刚刚";
+    return '刚刚';
   }
 
   // 时间戳可能由服务器生成，会跟本地时间有误差。
   if (relativeS <= 0 && Math.abs(relativeS) > adjustVal) {
-    return `未来 ${dayjs(startTemp).format("YYYY-MM-DD hh: mm")}`;
+    return `未来 ${dayjs(startTemp).format('YYYY-MM-DD hh: mm')}`;
   }
 
   if (relativeS < DATE_CONFIG.m) {
@@ -103,13 +103,13 @@ function getHumanDate(date, options = {}) {
   } else if (relativeS < DATE_CONFIG.d) {
     return `${seconds2Date(relativeS).h}小时前`;
   } else if (relativeDays(startTemp, currDate) === 1) {
-    return `昨天 ${dayjs(startTemp).format("hh:mm")}`;
+    return `昨天 ${dayjs(startTemp).format('hh:mm')}`;
   } else if (relativeDays(startTemp, currDate) === 2) {
-    return `前天 ${dayjs(startTemp).format("hh:mm")}`;
+    return `前天 ${dayjs(startTemp).format('hh:mm')}`;
   } else if (relativeYears(currDate, startTemp) === 0) {
-    return dayjs(startTemp).format("MM-DD hh:mm");
+    return dayjs(startTemp).format('MM-DD hh:mm');
   } else {
-    return dayjs(startTemp).format("YYYY-MM-DD hh:mm");
+    return dayjs(startTemp).format('YYYY-MM-DD hh:mm');
   }
 }
 

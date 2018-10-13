@@ -1,6 +1,6 @@
 {
   "name": "moment-ago",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "人性化显示时间相对现在过去多久",
   "author": "andesome <ling95613@gmail.com> (https://preview.liaolunling.top/)",
   "main": "index.js",
@@ -13,7 +13,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "build": "babel index.js --out-file index.min.js"
   },
   "jest": {
     "roots": [
@@ -24,6 +25,10 @@
     "dayjs": "^1.7.7"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
     "jest": "^23.6.0"
   },
   "directories": {
