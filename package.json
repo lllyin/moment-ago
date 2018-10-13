@@ -1,9 +1,9 @@
 {
   "name": "moment-ago",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "人性化显示时间相对现在过去多久",
   "author": "andesome <ling95613@gmail.com> (https://preview.liaolunling.top/)",
-  "main": "index.js",
+  "main": "index.min.js",
   "keywords": [
     "timeAgo",
     "moment",
