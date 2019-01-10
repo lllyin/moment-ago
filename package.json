@@ -14,7 +14,7 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "build": "babel index.js --out-file index.min.js"
+    "build": "babel index.js -o index.min.js --minified --no-comments"
   },
   "jest": {
     "roots": [
