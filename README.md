@@ -38,20 +38,36 @@
 nodejs
 ```
 const momentAgo = require("moment-ago");
-
-const agoStr = momentAgo(new Date()).ago();
-
-console.log(agoStr);  //刚刚
 ```
-ES6
 
+ES6
 ```
 import momentAgo from("moment-ago");
 
+```
 
-const agoStr = momentAgo(new Date().valueOf() - 5000).ago({ adjustVal: 0 });
+使用
+```
+//刚刚
+momentAgo(new Date()).ago();
 
-console.log(agoStr);  //5秒前
+//5秒前
+momentAgo(new Date() - 5000).ago();
+
+//1分钟前
+momentAgo(new Date() - 60 * 1000).ago()
+
+// 1小时前
+momentAgo("2018-09-30 09:30:23").ago() 
+...
+
+//未来
+momentAgo(new Date() + 60 * 1000).ago()
+
+//刚刚
+> adjust 时差绝对值小于矫正值，显示刚刚
+momentAgo(new Date() + 60 * 1000, { adjustVal: 60 }).ago()
+
 ```
 
 ## API
