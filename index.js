@@ -79,10 +79,10 @@ function relativeYears(startStamp, endStamp) {
  * @param {number | string} date 时间（时间戳或者字符）默认是时间戳
  * @param {object} [options] 配置项(可选)
  * @param {boolean} options.isString 指定date类型：默认是false. false:数字时间戳 true: YYYY-MM-DD HH:mm:ss (ISO 8601 string)
- * @param {number} options.adjustVal 校正值。单位秒。即两时间相差{adjustVal}显示为刚刚。默认：10
+ * @param {number} options.adjustVal 校正值。单位秒。即两时间相差{adjustVal}显示为刚刚。默认：0
  */
 function getHumanDate(date, options = {}) {
-  const { isString, adjustVal = 10 } = options;
+  const { isString, adjustVal = 0 } = options;
   const startTemp = date;
   const currDate = new Date().valueOf();
   const relativeS = relativeSeconds(startTemp, currDate);
