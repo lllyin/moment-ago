@@ -64,8 +64,8 @@ function seconds2Date(seconds) {
 }
 
 // 获取两个日期之间的相隔天数
-function relativeDays(startStamp, endStamp) {
-  return dayjs(endStamp).date() - dayjs(startStamp).date();
+export function relativeDays(startStamp, endStamp) {
+  return dayjs(endStamp).diff(dayjs(startStamp), 'day');
 }
 
 // 获取两个日期之间的相隔多少年
@@ -133,4 +133,4 @@ class MomentAgo {
   }
 }
 
-module.exports = momentAgo;
+export default momentAgo;
