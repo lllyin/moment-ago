@@ -1,27 +1,27 @@
 import momentAgo from '../index';
 
-describe('测试返回值', () => {
-  it('返回值应该是刚刚', () => {
+describe('测试MomentAgo', () => {
+  it('刚刚', () => {
     expect(momentAgo(new Date()).ago()).toBe('刚刚');
   });
-  it('返回值应该是刚刚', () => {
+  it('刚刚', () => {
     expect(momentAgo(momentAgo(new Date())).ago()).toBe('刚刚');
   });
-  it('返回值应该是1秒前', () => {
+  it('1秒前', () => {
     expect(momentAgo(new Date().valueOf() - 1000).ago({ adjustVal: 0 })).toBe('1秒前');
   });
-  it('返回值应该是1分前', () => {
+  it('1分前', () => {
     expect(momentAgo(new Date().valueOf() - 60 * 1000).ago({ adjustVal: 0 })).toBe('1分钟前');
   });
-  it('返回值应该包含小时前', () => {
-    expect(momentAgo(new Date().valueOf() - 2 * 60 * 60 * 1000).ago({ adjustVal: 0 })).toEqual(expect.stringMatching('小时前'));
+  it('返包含小时前', () => {
+    expect(momentAgo(new Date().valueOf() - 2 * 60 * 60 * 1000).ago({ adjustVal: 0 })).toEqual(expect.stringMatching('2小时前'));
   });
-  it('返回值应该包含昨天', () => {
+  it('昨天', () => {
     const date = new Date();
     const yestoday = new Date().setDate(date.getDate() - 1);
     expect(momentAgo(yestoday).ago({ adjustVal: 0 })).toEqual(expect.stringMatching('昨天'));
   });
-  it('返回值应该包含前天', () => {
+  it('前天', () => {
     const date = new Date();
     const yestoday = new Date().setDate(date.getDate() - 2);
     expect(momentAgo(yestoday).ago({ adjustVal: 0 })).toEqual(expect.stringMatching('前天'));
