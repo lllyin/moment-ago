@@ -1,4 +1,4 @@
-import { relativeDays } from '../index';
+import { relativeDays } from '../utils';
 
 describe('测试relativeDays', () => {
   it('负天', () => {

@@ -7,10 +7,9 @@ describe('测试MomentAgo', () => {
   it('刚刚', () => {
     expect(momentAgo(momentAgo(new Date())).ago()).toBe('刚刚');
   });
-  it('', ()=>{
+  it('', () => {
     expect(momentAgo(new Date() + 60 * 1000, { adjustVal: 60 }).ago()).toBe('刚刚');
-
-  })
+  });
   it('1秒前', () => {
     expect(momentAgo(new Date() - 1000).ago()).toBe('1秒前');
   });
