@@ -14,13 +14,20 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "build": "babel index.js -o index.min.js --minified --no-comments"
+    "build": "node build && npm run size",
+    "size": "size-limit && gzip-size index.min.js"
   },
   "jest": {
     "roots": [
       "test"
     ]
   },
+  "size-limit": [
+    {
+      "limit": "2.99 KB",
+      "path": "index.min.js"
+    }
+  ],
   "dependencies": {
     "dayjs": "^1.7.7"
   },
@@ -31,8 +38,13 @@
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
+    "gzip-size-cli": "^3.0.0",
     "jest": "^23.6.0",
-    "regenerator-runtime": "^0.13.1"
+    "regenerator-runtime": "^0.13.1",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-uglify": "^6.0.1",
+    "size-limit": "^0.21.1"
   },
   "directories": {
     "test": "test"
